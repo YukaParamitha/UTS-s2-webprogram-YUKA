@@ -14,35 +14,111 @@ $p= getAllData($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodMovie</title>
     <style>
+    body {
+        background-color: #E0CFC2;
+        
+    }
+        header {
+    background-color: #873632 ;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+      .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#E0CFC2 ;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #E0CFC2;
+    text-decoration: none;
+    font-size: 1rem;
+}
         table,
         th,
         td {
-            border: 1px solid;
-            padding: 10px;
+            border: 2px solid;
+            padding: 15px;
+            margin-left: auto;
+            margin-right: auto;
+           
         }
 
         table {
             border-collapse: collapse;
-            width: 100%;
+            width: 70%;
+            text-align: center;
+            background-color: #E0CFC2;
         }
+        .styled-table th {
+        background-color: #873632;
+        border: 1px solid #000;
+        color: #E0CFC2;
+        text-align: left;
+        }
+
+        .styled-table td {
+        border: 1px solid #000;
+        padding: 8px;
+        background: #CAAE9F;
+    }
+        
+ footer {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: #873632;
+    align-items: center;
+    justify-content: center;
+ }
+
     </style>
 </head>
 
 <body>
-    <center><h1>GOOD MOVIE</h1><center>
-
-    <button><a href="index.php">BACK TO HOME</a></button>
-
-    <br>
-
-    <br>
-
-    <button><a href="/goodmovie-tambah.php">ADD MORE</a></button>
-
-    <br>
-    
-    <br>
-
+<header>
+        <div class="container">
+            <div class="logo">Movie List</div>
+            <nav>
+                <ul>
+                    <li><a href="index.php" class="a-btn">BACK TO HOME</a></li>
+                    <li><a href="goodmovie-tambah.php" class="a-btn">ADD MORE</a></li>
+                </ul>
+            </nav>
+           
+        </div>
+</header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
     <?php if (isset($_SESSION['BERHASIL_TAMBAH_GOOD_MOVIE'])) : ?>
         <p><?= $_SESSION['BERHASIL_TAMBAH_GOOD_MOVIE'] ?></p>
@@ -50,10 +126,9 @@ $p= getAllData($conn);
     <?php endif; ?>
 
 
-    <table>
+    <table class="styled-table">
         <thead>
             <tr>
-            <th>id</th>
                 <th>TITLE</th>
                 <th>GENRE</th>
                 <th>RATINGS</th>
@@ -64,7 +139,7 @@ $p= getAllData($conn);
         <tbody>
             <?php foreach ($p as $k => $v) : ?>
                 <tr>
-                    <td><?= $v['id'] ?></td>
+                    
                     <td><?= $v['title'] ?></td>
                     <td><?= $v['genre'] ?></td>
                     <td><?= $v['ratings'] ?></td>
@@ -80,6 +155,11 @@ $p= getAllData($conn);
             <?php endforeach; ?>
         </tbody>
     </table>
+    <footer>
+        <div class= "kaki">
+            &copy; MovieList
+        </div>
+    </footer>
 </body>
 
 </html>

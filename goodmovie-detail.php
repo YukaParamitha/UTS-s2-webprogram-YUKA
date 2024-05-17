@@ -15,15 +15,15 @@ $d = tampilproduk($conn, $id);
 </head>
 
 <body>
-    <h1>GOOD MOVIE DETAIL</h1>
+    <h1>MOVIE DETAIL</h1>
 
-    <a href="/goodmovie.php">back to GOOD MOVIE</a>
+    <a href="/goodmovie.php">back to MOVIE</a>
 
     <br>
     <br>
 
     <p>TITLE : <?=$d['title'] ?></p>
-    <p>DATE WATCH : <?=$d['genre'] ?></p>
+    <p>GENRE : <?=$d['genre'] ?></p>
     <p>RATINGS : <?=$d['ratings'] ?></p>
     <p>NOTE : <?=$d['notes'] ?></p>
 

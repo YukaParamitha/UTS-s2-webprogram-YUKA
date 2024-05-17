@@ -20,6 +20,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+    
         }
 
         .container {
@@ -29,13 +30,13 @@
             background-repeat: no-repeat;
             background-size: cover;
             padding: 150px;
-            border-radius: 100px;
+            border-radius: 50px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .h1 {
             margin-bottom: 20px;
-            color: white;
+            color: #873632;
         }
 
         button {
@@ -56,15 +57,22 @@
         button:hover {
             background-color: #c53c3c;
         }
+
+        .yuka {
+            color: #873632;
+            font-size: 2rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>MOVIE LIST ?></h1>
-        <button><a href="goodmovie.php">GOOD MOVIE</a></button>
+        <button><div class="yuka">MOVIE LIST</div></button>
+            <br>
+        <button><a href="goodmovie.php">Click here!</a></button>
         <br>
-        <button><a href="badmovie.php">BAD MOVIE</a></button>
+       
     </div>
 </body>
 
